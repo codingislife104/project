@@ -1,0 +1,118 @@
+*************************ADMIN***************************************
+
+1.Write a query to check login and password credentials where role is Admin?
+	public static final String adminQuery = "select login_ID,password from users where role IN ('Admin')";
+
+2.Write a query to insert a program?	
+	public static final String insertProgramScheduledQuery= "insert into Programs_Scheduled values(?,?,?,?,?,?,?)";
+
+3.Write a query to delete participant based on	scheduled program id?
+	public static final String deleteParticipantwithIdQuery = "delete from Participant where Scheduled_program_id=?";
+
+4.Write a query to delete scheduled programs based on scheduled program id?	
+	public static final String deleteProgramScheduledwithID = "delete from Programs_Scheduled where Scheduled_program_id  = ? ";
+
+5.What is query to display the programs Scheduled?
+	public static final String programScheduledQuery="select * from Programs_Scheduled";
+
+6.Write a query to view application id and status of a particular scheduled program id?
+	public static final String viewAppIDandStatus="select Application_id,status from Application WHERE Scheduled_program_id =(select Scheduled_program_id from Programs_Scheduled where ProgramName = ?)";
+
+7.What is the query to add program to programs offered?
+  	public static final String updateProgramOffered= "UPDATE Programs_Offered SET description=?,applicant_eligibility  =?,duration = ?,degree_certificate_offer =?, university_name=? where Program_Name=?";
+  
+8.What is the query to add a program in programs offered?
+	public static final	String insertProgramOffered= "INSERT INTO Programs_Offered values(?,?,?,?,?,?)";
+	
+9.Write a query to delete program scheduled based on program name?	
+	public static final String deleteProgramScheduledQuery = "delete from Programs_Scheduled where ProgramName=? ";
+
+10.Write a query to delete program offered bases on program name?
+	public static final String deleteProgramOfferedQuery="delete from Programs_Offered where ProgramName =?";
+
+11.What is the query to display the details of the applicants using their status and program scheduled id?
+	public static final String acceptedQuery = "select * from Application where upper(application.status) like upper('ACCEPTED') or lower(Application.status) like lower('accepted') AND Scheduled_program_id=(select Scheduled_program_id from Programs_Scheduled where Program_Name=?)";
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************MAC*********************************************************
+
+12.Write a query to check login and password credentials where role is MAC?
+   public static final String LoginQuery = "select login_ID,password from users where role ='MAC'";
+
+13.Write a query to view all scheduled program id?
+	public static final String viewScheduledProgramID="select Scheduled_program_id  from Programs_Scheduled ";
+	
+14.What is query to update the Application?
+	public static final String update ApplicationQuery ="Update application set status=?,date_of_interview=? where application_id=? ";
+
+15.Write a query to delete applicants for a particular scheduled program id?	
+	public static final String deleteApplicationwithID = "delete from Application where Scheduled_program_id=?";
+
+
+16.Write a query to view all applicants who applied for a particular program?
+	public static final String appliedpProgramQuery = "select * from Application where upper(application.status) like upper('APPLIED') or lower(application.status) like lower('applied') AND Scheduled_program_id=(select Scheduled_program_id from Programs_Scheduled where Program_Name=?)";
+
+17.What is query to update the Application Status?
+	public static final String updateStatusQuery = "Update application set status=? where application_id=? ";
+
+18.Write a query to view the details of the application whose status is confirmed?
+	public static final String viewApplicationQuery="select * from Application where upper(application.status) like upper('CONFIRMED') orlower(application.status) like lower('confirmed')";
+
+19.What is the query to display the details of the applicant whose application status is Applied?
+	public static final String appliedQuery="select * from Application where upper(application.status)like upper('APPLIED') or lower(Application.status) like lower('applied')";
+
+20.What is the query to view the application id and status for scheduled Program?
+	public static final String viewAppIDfromScheduledPgm ="select Application_id,status  from Application WHERE Scheduled_program_id =?";
+
+21.What is the query to display details of Applicant whose status is other than applied?
+	public static final String notAppliedQuery="select Application_id,full_name,status from Application where upper(application.status) not like upper('APPLIED') or lower(Application.status) not like lower('applied') AND Scheduled_program_id=(select Scheduled_program_id from Programs_Scheduled where Program_Name IN (?))";
+
+
+
+
+
+
+
+
+
+
+
+***********************************APPLICANT*****************************************************
+
+
+22.Write a query to insert applicant details?
+    public static final String insertApplicationQuery = "Insert into Application values(Application_id_seq.nextval,?,?,?,?,?,?,?,?,?,?)";
+
+23.Write a query to view the application using application id?
+  	public static final String viewApplicationwithID="select * from Application where application_id =?";
+
+24.What is the query to display programs offered?
+	public static final String programNameQuery="select Program_Name from Programs_Offered";
+
+25.What is query to display id ,name ,status and interview date of the applicant using application id?
+	public static final String dateofInterviewQuery="select Application_id,full_name,status,Date_Of_Interview from Application where Application_id=?";
+
+26.What is query to display program name from programs offered?
+	public static final String viewProgramName="select Program_Name from Programs_Offered ";
+
+
+
+
+	
+	
+	
+	
+	
+
+
